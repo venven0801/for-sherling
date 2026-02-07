@@ -52,8 +52,8 @@ body, html {
     height: 70%;
     border: 2px solid black;
     width: 33%;
-    min-width: 300px; 
-    max-width: 500px; 
+    min-width: 300px;
+    max-width: 500px;
 }
 
 .image-box {
@@ -72,7 +72,7 @@ body, html {
 .gif {
     height: 90%;
     width: 64%;
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .text-one {
@@ -90,15 +90,15 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position: relative; 
+    position: relative;
 }
 
 .yes {
     font-family: "Allura", serif;
-    font-size: 3vh;
+    font-size: 4vh; /* Smaller initial font size */
     font-weight: 550;
-    height: 30%;
-    width: 20%;
+    height: 40%; /* Smaller initial height */
+    width: 30%; /* Smaller initial width */
     border: none;
     cursor: pointer;
     background-color: #FB607F;
@@ -106,25 +106,25 @@ body, html {
     z-index: 500;
     box-shadow: 4px 4px 10px black;
     transition: scale 0.1s ease-in;
-    min-height: 50px; 
-    min-width: 100px;
+    min-height: 40px; /* Adjusted for touch */
+    min-width: 80px;
 }
 
 .no {
     font-family: "Allura", serif;
-    font-size: 3vh;
+    font-size: 4vh; /* Smaller initial font size */
     font-weight: 550;
-    height: 30%;
-    width: 20%;
+    height: 40%; /* Smaller initial height */
+    width: 30%; /* Smaller initial width */
     border: none;
     cursor: pointer;
     background-color: #FB607F;
     scale: 1;
     box-shadow: 4px 4px 10px black;
     transition: scale 0.1s ease-in;
-    min-height: 50px; 
-    min-width: 100px;
-    position: relative; 
+    min-height: 40px; /* Adjusted for touch */
+    min-width: 80px;
+    position: relative;
 }
 
 .yes:hover, .no:hover {
@@ -132,14 +132,19 @@ body, html {
     scale: 0.95;
 }
 
+.yes:focus, .no:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
 a {
     text-decoration: none;
     font-family: "Allura", serif;
-    font-size: 7vh;
+    font-size: 4vh; /* Adjusted to match smaller buttons */
 }
 
-
-@media (max-width: 480px) { 
+/* Responsive breakpoints */
+@media (max-width: 480px) {
     .container {
         height: 85%;
         width: 95%;
@@ -153,13 +158,13 @@ a {
         font-size: 1.2rem;
     }
     .yes, .no {
-        font-size: 6vh;
-        height: 70%;
-        width: 45%;
+        font-size: 3.5vh; /* Smaller for mobile */
+        height: 35%; /* Even smaller on mobile */
+        width: 25%;
     }
 }
 
-@media (min-width: 481px) and (max-width: 768px) { 
+@media (min-width: 481px) and (max-width: 768px) {
     .container {
         height: 80%;
         width: 70%;
@@ -169,11 +174,11 @@ a {
         width: 75%;
     }
     .yes, .no {
-        font-size: 6.5vh;
+        font-size: 4vh;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) { 
+@media (min-width: 769px) and (max-width: 1024px) {
     .container {
         height: 75%;
         width: 40%;
@@ -182,9 +187,12 @@ a {
         height: 90%;
         width: 70%;
     }
+    .yes, .no {
+        font-size: 4.5vh;
+    }
 }
 
-@media (min-width: 1025px) { 
+@media (min-width: 1025px) {
     .container {
         height: 70%;
         width: 33%;
@@ -193,12 +201,7 @@ a {
         height: 90%;
         width: 64%;
     }
-}
-
-.yes:focus, .no:focus {
-    outline: 2px solid #000;
-    outline-offset: 2px;
-}
-.yes, .no {
-    color: #000000; 
+    .yes, .no {
+        font-size: 4vh;
+    }
 }
