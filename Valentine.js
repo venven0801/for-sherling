@@ -1,6 +1,3 @@
-// Valentine.js
-
-// Select elements
 const yesBtn = document.getElementById('yes');
 const noBtn = document.getElementById('no');
 const gifElement = document.getElementById('gif');
@@ -45,7 +42,7 @@ function moveNoButton() {
 
 // Add event listeners for "No" button hover and touch (for mobile compatibility)
 noBtn.addEventListener('mouseover', moveNoButton);
-noBtn.addEventListener('touchstart', moveNoButton); // For touch devices
+noBtn.addEventListener('touchstart', moveNoButton);
 
 // Add keyboard support for moving "No" button (on focus/keydown for accessibility)
 noBtn.addEventListener('keydown', (e) => {
@@ -55,42 +52,42 @@ noBtn.addEventListener('keydown', (e) => {
   }
 });
 
-// Keep the original click logic for "No" button, but integrate with moving
+// Keep the original click logic for "No" button, but integrate with moving and adjust sizes
 noBtn.addEventListener("click", () => {
   if (count == 2) {
     gifElement.src = "rusure.gif";
     textElement.innerHTML = "Bakitt????? Dapat yes yon diba??🤨";
-    yesBtn.style.height = "30%";
-    yesBtn.style.width = "30%";
-    noBtn.style.width = "25%";
+    yesBtn.style.height = "50%"; // Larger Yes
+    yesBtn.style.width = "40%";
+    noBtn.style.width = "20%"; // Smaller No
     count++;
   } else if (count == 3) {
     gifElement.src = "3shocked-1.gif";
     textElement.innerHTML = "NOOOO🥹";
-    yesBtn.style.height = "40%";
-    yesBtn.style.width = "40%";
+    yesBtn.style.height = "60%";
+    yesBtn.style.width = "50%";
     noBtn.style.width = "15%";
     count++;
   } else if (count == 4) {
     gifElement.src = "4.crying.gif";
     textElement.innerHTML = "Iyoccccccc akuuu😭";
-    yesBtn.style.height = "50%";
-    yesBtn.style.width = "50%";
-    noBtn.style.fontSize = "3vh";
-    noBtn.style.width = "5%";
+    yesBtn.style.height = "70%";
+    yesBtn.style.width = "60%";
+    noBtn.style.fontSize = "2.5vh";
+    noBtn.style.width = "10%";
     count++;
   } else if (count == 5) {
     gifElement.src = "5.crying.gif";
     textElement.innerHTML = "Pretty Please🥺😘";
-    yesBtn.style.height = "60%";
-    yesBtn.style.width = "60%";
+    yesBtn.style.height = "80%";
+    yesBtn.style.width = "70%";
     noBtn.style.display = "none";
   }
 });
 
 // Add event listener for "Yes" button click
 yesBtn.addEventListener("click", () => {
-  vid.style.display = "heart.webm";
+  vid.style.display = "block";
   gifElement.src = "idc.gif";
   textElement.innerHTML = "YEYYYYYYYYYYY 😘";
   yesBtn.innerHTML = '<a href="https://www.instagram.com/areyviyihen/" aria-label="Link to message me on Instagram">Message me</a>';
@@ -98,7 +95,7 @@ yesBtn.addEventListener("click", () => {
   yesBtn.style.width = "96%";
   noBtn.style.display = "none";
   setTimeout(() => {
-    vid.style.display = "heart.webm";
+    vid.style.display = "none";
   }, 9000);
 });
 
@@ -107,9 +104,9 @@ let noInteractionCount = 0;
 function incrementNoCount() {
   noInteractionCount++;
   if (noInteractionCount > 5 && count <= 5) {
-    textElement.innerHTML = "BILIIII NAAAA 😢";
+    textElement.innerHTML = "Please say yes! 😢 I promise it'll be fun!";
   }
 }
 noBtn.addEventListener('mouseover', incrementNoCount);
 noBtn.addEventListener('touchstart', incrementNoCount);
-noBtn.addEventListener('keydown', incrementNoCount); // For keyboard
+noBtn.addEventListener('keydown', incrementNoCount);
